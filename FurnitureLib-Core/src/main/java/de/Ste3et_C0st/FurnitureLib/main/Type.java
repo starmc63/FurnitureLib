@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Type {
-    public static String version = "1." + FurnitureLib.getBukkitVersion().split("_")[1];
+    public static String version = "1." + FurnitureLib.getVersionInt();
     public static ProtocolFields field = ProtocolFields.getField(version);
     private static LanguageManager lang = LanguageManager.getInstance();
     private static List<Material> swords, spades, axt, pickaxe, hoes, weapons, tools;
@@ -218,7 +218,7 @@ public class Type {
                 return Spigot115;
             }
             
-            if (s.startsWith("1.17") || s.startsWith("1.18") || s.startsWith("1.19") || s.startsWith("1.20")) {
+            if (s.startsWith("1.17") || s.startsWith("1.18") || s.startsWith("1.19") || s.startsWith("1.20") || s.startsWith("1.21")) {
                 return Spigot117;
             }
             

@@ -227,7 +227,7 @@ public class LanguageManager {
 
     public void addText(YamlConfiguration configuration) {
         try {
-        	final File lang = new File(getLangFolder(), this.lang);
+        	final File lang = new File(getLangFolder(), this.lang + ".yml");
             final YamlConfiguration conf = YamlConfiguration.loadConfiguration(lang);
             conf.addDefaults(configuration);
             conf.options().copyDefaults(true);
@@ -265,7 +265,8 @@ public class LanguageManager {
 	public static String serializeLegacyColors(String input) {
 		if(Objects.isNull(input)) return "";
 		if(input.isEmpty()) return "";
-		String output = ChatColor.translateAlternateColorCodes('&', input).replaceAll("§m", "<st>").replaceAll("§o", "<i>").replaceAll("§n", "<u>").replaceAll("§l", "<b>").replaceAll("§k", "<obf>");
+		
+		String output = ChatColor.translateAlternateColorCodes('&', input).replaceAll("§r", "<reset>").replaceAll("§m", "<st>").replaceAll("§o", "<i>").replaceAll("§n", "<u>").replaceAll("§l", "<b>").replaceAll("§k", "<obf>");
 		Matcher matcher = STRIP_COLOR_PATTERN.matcher(output);
 		
         while (matcher.find()) {

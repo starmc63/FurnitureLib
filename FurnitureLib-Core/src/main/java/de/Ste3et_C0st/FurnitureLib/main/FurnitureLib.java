@@ -39,6 +39,9 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.comphenix.protocol.ProtocolLib;
+import com.comphenix.protocol.ProtocolLibrary;
+import com.comphenix.protocol.utility.MinecraftProtocolVersion;
 import com.comphenix.protocol.utility.MinecraftVersion;
 import com.google.common.collect.Lists;
 
@@ -93,13 +96,8 @@ public class FurnitureLib extends JavaPlugin {
     private static boolean folia = false, paper = false;
     
     static {
-    	 String bukkitVersion = getBukkitVersion();
-         if (bukkitVersion.contains("_")) {
-             String versionString = bukkitVersion.split("_")[1];
-             versionInt = Integer.parseInt(versionString);
-             newVersion = versionInt > 12;
-         }
-         
+    	 versionInt = Integer.parseInt(getBukkitVersion());
+    	 newVersion = versionInt > 12;
          folia = containsClass("io.papermc.paper.threadedregions.RegionizedServer");
          paper = containsClass("com.destroystokyo.paper.event.block.BlockDestroyEvent");
     }
@@ -122,7 +120,7 @@ public class FurnitureLib extends JavaPlugin {
     }
     
     public static String getBukkitVersion() {
-        return Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
+        return Bukkit.getServer().getBukkitVersion().replace(".", ",").replace("-", ",").split(",")[1];
     }
 
     public static FurnitureLib getInstance() {
@@ -308,7 +306,7 @@ public class FurnitureLib extends JavaPlugin {
     	
     	this.furnitureConfig = new FurnitureConfig(instance);
     	this.furnitureConfig.initLanguage();
-        if (getVersionInt() < 12 || getVersionInt() > 20) {
+        if (getVersionInt() < 12 || getVersionInt() > 21) {
             this.disableFurnitureLib(Arrays.asList("<red>FurnitureLib only works on Spigot 1.12 - 1.20"));
             return;
         }
@@ -564,8 +562,16 @@ public class FurnitureLib extends JavaPlugin {
     public static boolean getVersion(MinecraftVersion minecraftVersion) {
     	return minecraftVersion.atOrAbove();
     }
+    
+    public static boolean isVersionOrAbove(String string) {
+    	return FurnitureLib.getVersion(new MinecraftVersion(string));
+    }
 
 	public ServerFunction getServerFunction() {
 		return this.serverFunction;
+	}
+	
+	public static String getPacketVersion() {
+		return "";
 	}
 }

@@ -1,6 +1,4 @@
-plugins {
-    id 'de.Ste3et_C0st.furniture.java-conventions'
-}
+apply plugin: 'de.Ste3et_C0st.furniture.java-conventions'
 
 repositories {
     maven {
@@ -9,10 +7,10 @@ repositories {
 }
 
 java {
-    sourceCompatibility = 17
-    targetCompatibility = 17
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }
-
 
 dependencies {
     implementation project(':FurnitureLib-Core')
