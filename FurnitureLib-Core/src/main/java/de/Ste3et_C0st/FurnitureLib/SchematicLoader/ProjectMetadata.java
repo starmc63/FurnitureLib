@@ -122,7 +122,7 @@ public class ProjectMetadata {
                 try {
                     inventory.set(o.toString(), new CraftItemStack().getNBTTag(is));
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    
                 }
             }
         }
@@ -140,7 +140,7 @@ public class ProjectMetadata {
             NBTCompressedStreamTools.write(compound, out);
             out.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            
             return new byte[0];
         }
         return out.toByteArray();

@@ -49,7 +49,7 @@ public class NBTTagByteArray extends NBTBase {
         try {
             length = datainput.readInt();
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
 
         nbtreadlimiter.readBytes(8 * length);
@@ -57,7 +57,7 @@ public class NBTTagByteArray extends NBTBase {
         try {
             datainput.readFully(this.data);
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
     }
 
@@ -71,12 +71,12 @@ public class NBTTagByteArray extends NBTBase {
         try {
             dataoutput.writeInt(this.data.length);
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
         try {
             dataoutput.write(this.data);
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
     }
 }

@@ -29,7 +29,7 @@ public abstract class ItemStackReader {
 			method_save = clazz_nms_item.getMethod(FurnitureLib.getVersionInt() > 17 ? "b" : "save", clazz_nms_nbt);
 			clazz_nbttools_method_a_output = clazz_nbttools.getMethod("a", clazz_nms_nbt, OutputStream.class);
 		}catch(Exception ex) {
-			ex.printStackTrace();
+			System.out.println(ex);
 		}
 	}
 	
@@ -45,7 +45,7 @@ public abstract class ItemStackReader {
 	            byte[] out = os.toByteArray();
 				return NBTCompressedStreamTools.read(out, NBTReadLimiter.unlimited);
 	        } catch (Exception e) {
-	            e.printStackTrace();
+	            
 	            return null;
 	        }
 	}

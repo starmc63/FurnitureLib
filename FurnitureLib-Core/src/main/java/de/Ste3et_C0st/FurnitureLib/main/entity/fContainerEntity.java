@@ -3,6 +3,7 @@ package de.Ste3et_C0st.FurnitureLib.main.entity;
 import java.util.List;
 import java.util.Objects;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -116,7 +117,7 @@ public abstract class fContainerEntity extends fEntity{
                 getManager().sendServerPacket(player, packet);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
     }
     

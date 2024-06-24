@@ -33,7 +33,7 @@ public class BlockDataConverter1_20 extends BlockDataReader{
 			holderLookup = iWorldReader.getMethod("a", resourceKeyClass);
 			worldReaderHandle = craftWorldClass.getMethod("getHandle");
 		} catch (Exception e) {
-			e.printStackTrace();
+			
 		}
 	}
 	
@@ -52,7 +52,7 @@ public class BlockDataConverter1_20 extends BlockDataReader{
 				Object craftBlockData = craftBlockDataClass.getDeclaredMethod("fromData", iBlockData.getClass()).invoke(null, iBlockData);
 				returnAtomic.set(BlockData.class.cast(craftBlockData));
 			}catch (Exception e) {
-				e.printStackTrace();
+				
 			}
 		});
 		

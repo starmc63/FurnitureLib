@@ -5,6 +5,7 @@ import de.Ste3et_C0st.FurnitureLib.NBT.NBTTagCompound;
 import de.Ste3et_C0st.FurnitureLib.NBT.NBTTagList;
 import de.Ste3et_C0st.FurnitureLib.NBT.NBTTagString;
 import de.Ste3et_C0st.FurnitureLib.main.ObjectID;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
 import java.io.ByteArrayOutputStream;
@@ -20,7 +21,7 @@ public class Serializer {
             NBTCompressedStreamTools.write(compound, out);
             out.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            
             return new byte[0];
         }
         return out.toByteArray();

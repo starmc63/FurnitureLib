@@ -31,7 +31,7 @@ public class ObjectID extends ObjectData{
             this.ObjectID = name + ":" + this.serial + ":" + plugin;
             if (Objects.nonNull(startLocation)) setStartLocation(startLocation);
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
     }
 
@@ -320,7 +320,9 @@ public class ObjectID extends ObjectData{
             return;
         }
         World w = loc.getWorld();
-        w.dropItemNaturally(loc, project.getCraftingFile().getRecipe().getResult());
+        p.getScheduler().run(FurnitureLib.getInstance(),task->{
+            w.dropItemNaturally(loc, project.getCraftingFile().getRecipe().getResult());
+        },null);
     }
 
     public void deleteEffect(HashSet<fEntity> asList) {

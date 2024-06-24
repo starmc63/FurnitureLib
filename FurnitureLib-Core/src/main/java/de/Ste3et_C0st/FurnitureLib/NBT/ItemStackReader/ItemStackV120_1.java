@@ -21,7 +21,7 @@ public class ItemStackV120_1 extends ItemStackReader{
 			asBukkitCopy = clazz_obc_CraftItemStack.getMethod("asBukkitCopy", clazz_nms_item);
 			clazz_nbttools_method_a_input = clazz_nbttools.getMethod("a", InputStream.class, nmsNBTReadLimiter);
 		}catch(Exception ex) {
-			ex.printStackTrace();
+			System.out.println(ex);
 		}
 	}
 	
@@ -30,7 +30,7 @@ public class ItemStackV120_1 extends ItemStackReader{
             Object nms_item = a.invoke(null, convertCompound(nbt));
 			return (ItemStack) asBukkitCopy.invoke(null, nms_item);
         } catch (Exception e) {
-            e.printStackTrace();
+            
             return null;
         }
     }

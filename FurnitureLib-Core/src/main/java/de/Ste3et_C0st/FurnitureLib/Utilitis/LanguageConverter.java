@@ -65,7 +65,7 @@ public class LanguageConverter {
             
             this.saveConvertedFile(this.lang, hash);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            System.out.println(ex);
             return;
         }
 	}
@@ -93,7 +93,7 @@ public class LanguageConverter {
 		try {
 			configuration.save(file);
 		} catch (IOException e) {
-			e.printStackTrace();
+			
 		}
 	}
 	

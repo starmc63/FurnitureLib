@@ -241,7 +241,7 @@ public abstract class fEntity extends fSerializer implements Cloneable {
                     getManager().sendServerPacket(p, this.mountPacketContainer);
                 }
             } catch (Exception ex) {
-                ex.printStackTrace();
+                System.out.println(ex);
             }
         }
     }
@@ -327,7 +327,7 @@ public abstract class fEntity extends fSerializer implements Cloneable {
             try {
                 getManager().sendServerPacket(p, c);
             } catch (Exception e) {
-                e.printStackTrace();
+                
             }
         }
     }
@@ -344,7 +344,7 @@ public abstract class fEntity extends fSerializer implements Cloneable {
             try {
                 getManager().sendServerPacket(p, c);
             } catch (Exception e) {
-                e.printStackTrace();
+                
             }
         }
     }
@@ -357,7 +357,7 @@ public abstract class fEntity extends fSerializer implements Cloneable {
             	   getManager().sendServerPacket(player, this.mountPacketContainer);
              }
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
     }
 
@@ -368,7 +368,7 @@ public abstract class fEntity extends fSerializer implements Cloneable {
         try {
             getManager().sendServerPacket(player, update);
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
     }
 
@@ -409,7 +409,7 @@ public abstract class fEntity extends fSerializer implements Cloneable {
            	  getManager().sendServerPacket(p, mountPacketContainer);
            }
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
     }
 
@@ -422,7 +422,7 @@ public abstract class fEntity extends fSerializer implements Cloneable {
         try {
             getManager().sendServerPacket(p, destroy);
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
     }
 
@@ -449,7 +449,7 @@ public abstract class fEntity extends fSerializer implements Cloneable {
                 try {
                     getManager().sendServerPacket(player, container);
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    
                 }
             });
         }
@@ -470,7 +470,7 @@ public abstract class fEntity extends fSerializer implements Cloneable {
             try {
                 getManager().sendServerPacket(player, container);
             } catch (Exception e) {
-                e.printStackTrace();
+                
             }
         });
         this.passengerIDs.clear();

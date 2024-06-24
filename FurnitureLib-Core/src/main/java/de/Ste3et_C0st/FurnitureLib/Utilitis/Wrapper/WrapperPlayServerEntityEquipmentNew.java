@@ -38,7 +38,7 @@ public class WrapperPlayServerEntityEquipmentNew extends AbstractPacket implemen
 		try {
 			super.sendPacket(receiver);
 		}catch(Exception ex) {
-			ex.printStackTrace();
+			System.out.println(ex);
 		}
 	}
 }

@@ -5,6 +5,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.BiFunction;
 import java.util.function.Predicate;
 
+import de.Ste3et_C0st.FurnitureLib.main.FurnitureLib;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -26,7 +27,7 @@ public class itemFunction extends modularFunction{
 			if (entity.getInventory().getItemInMainHand() != null && entity.getInventory().getItemInMainHand().getType() != Material.AIR) {
 				ItemStack is = entity.getInventory().getItemInMainHand();
                 is.setAmount(1);
-                player.getWorld().dropItem(entity.getObjID().getStartLocation(), is);
+				player.getScheduler().run(FurnitureLib.getInstance(), task->{player.getWorld().dropItem(entity.getObjID().getStartLocation(), is);},null);
                 returnValue.set(true);
 			}
 			if (player.getInventory().getItemInMainHand() != null) {

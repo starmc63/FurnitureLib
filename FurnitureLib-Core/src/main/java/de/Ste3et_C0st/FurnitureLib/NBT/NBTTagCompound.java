@@ -1,6 +1,7 @@
 package de.Ste3et_C0st.FurnitureLib.NBT;
 
 import de.Ste3et_C0st.FurnitureLib.main.FurnitureLib;
+import org.bukkit.Bukkit;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -35,13 +36,13 @@ public class NBTTagCompound extends NBTBase implements Cloneable {
         try {
             dataoutput.writeByte(nbtbase.getTypeId());
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
         if (nbtbase.getTypeId() != 0) {
             try {
                 dataoutput.writeUTF(s);
             } catch (IOException e) {
-                e.printStackTrace();
+                
             }
             nbtbase.write(dataoutput);
         }
@@ -51,7 +52,7 @@ public class NBTTagCompound extends NBTBase implements Cloneable {
         try {
             return datainput.readUTF();
         } catch (IOException e) {
-            e.printStackTrace();
+            
             return null;
         }
     }
@@ -60,7 +61,7 @@ public class NBTTagCompound extends NBTBase implements Cloneable {
         try {
             return datainput.readByte();
         } catch (IOException e) {
-            e.printStackTrace();
+            
             return 0x00;
         }
     }
@@ -264,7 +265,7 @@ public class NBTTagCompound extends NBTBase implements Cloneable {
     			return true;
     		}
     	}catch (Exception e) {
-    		e.printStackTrace();
+    		
 		}
     	return false;
     }
@@ -372,7 +373,7 @@ public class NBTTagCompound extends NBTBase implements Cloneable {
         try {
             dataoutput.writeByte(0);
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
     }
 }

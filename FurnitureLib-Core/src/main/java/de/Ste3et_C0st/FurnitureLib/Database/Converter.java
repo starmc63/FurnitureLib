@@ -7,6 +7,7 @@ import de.Ste3et_C0st.FurnitureLib.Utilitis.MaterialConverter;
 import de.Ste3et_C0st.FurnitureLib.Utilitis.SchedularHelper;
 import de.Ste3et_C0st.FurnitureLib.main.FurnitureConfig;
 import de.Ste3et_C0st.FurnitureLib.main.FurnitureLib;
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 
 import java.io.ByteArrayInputStream;
@@ -55,7 +56,7 @@ public class Converter {
         try (Connection con = database.getConnection(); ResultSet rs = database.getConnection().getMetaData().getTables(null, null, str, null)) {
             b = rs.next();
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
         return b;
     }
@@ -80,7 +81,7 @@ public class Converter {
                     } while (rs.next());
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                
             }
         } else {
         	FurnitureLib.debug("FurnitureLib: Found no able to convert", 1);
@@ -166,7 +167,7 @@ public class Converter {
                     FurnitureLib.getInstance().send("==========================================");
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                
             }
     	});
     }

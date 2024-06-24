@@ -70,7 +70,7 @@ public class ProjectInventory implements Listener {
                         this.id.update();
                     }
                 }catch (Exception ex) {
-					ex.printStackTrace();
+					System.out.println(ex);
 				}
             }
         }
@@ -101,7 +101,7 @@ public class ProjectInventory implements Listener {
     		 }
     		 this.id.getPacketList().stream().filter(entry -> entry.getName().startsWith("OnInventoryCloseDisplayItem")).forEach(entityList::add);	 
     	 }catch (Exception ex) {
-				ex.printStackTrace();
+				System.out.println(ex);
 		}
     }
 
@@ -117,7 +117,7 @@ public class ProjectInventory implements Listener {
             try {
                 items.set(i + "", new CraftItemStack().getNBTTag(inv.getContents()[i]));
             } catch (Exception e) {
-                e.printStackTrace();
+                
             }
         }
         inventory.setInt("size", getInv().getSize());
@@ -140,7 +140,7 @@ public class ProjectInventory implements Listener {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
     }
 
@@ -150,7 +150,7 @@ public class ProjectInventory implements Listener {
             NBTCompressedStreamTools.write(compound, out);
             out.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            
             return new byte[0];
         }
         return out.toByteArray();

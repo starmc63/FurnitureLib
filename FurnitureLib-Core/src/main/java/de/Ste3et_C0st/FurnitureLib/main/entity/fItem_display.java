@@ -78,14 +78,14 @@ public class fItem_display extends fDisplay{
         		final ItemStack stack = new CraftItemStack().getItemStack(metadata.getCompound("stack"));
         		this.setItemStack(stack);
         	}catch (Exception e) {
-				e.printStackTrace();
+				
 			}
         }else if(metadata.hasKeyOfType("item", 10)) {
         	try {
         		final ItemStack stack = new CraftItemStack().getItemStack(metadata.getCompound("item"));
         		this.setItemStack(stack);
         	}catch (Exception e) {
-				e.printStackTrace();
+				
 			}
         }
         
@@ -94,14 +94,14 @@ public class fItem_display extends fDisplay{
         		final ItemDisplayTransform displayTransform = ItemDisplayTransform.valueOf(metadata.getString("display").toUpperCase());
         		this.setItemDisplay(displayTransform);
         	}catch (Exception e) {
-				e.printStackTrace();
+				
 			}
         }else if(metadata.hasKeyOfType("item_display", 8)) {
         	try {
         		final ItemDisplayTransform displayTransform = ItemDisplayTransform.valueOf(metadata.getString("item_display").toUpperCase());
         		this.setItemDisplay(displayTransform);
         	}catch (Exception e) {
-				e.printStackTrace();
+				
 			}
         }
 	}

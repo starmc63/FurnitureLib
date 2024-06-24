@@ -50,7 +50,7 @@ public class debugCommand extends iCommand {
                 		console.sendMessage("FurnitureLib: " + sender.getName() + " start the database debug");
                 		console.sendMessage("Please enter this command to confirm it: '/furniture debug database " + key + "' you have 60 secounds");
             		}catch (Exception e) {
-						e.printStackTrace();
+						
 					}
                 }else if(args[1].equalsIgnoreCase("regen")) {
                 	sender.sendMessage("Furniture ModelFile regen mode Started");
@@ -62,7 +62,7 @@ public class debugCommand extends iCommand {
                 		console.sendMessage("FurnitureLib: " + sender.getName() + " start the database debug");
                 		console.sendMessage("Please enter this command to confirm it: '/furniture debug regen " + key + "' you have 60 secounds");
             		}catch (Exception e) {
-						e.printStackTrace();
+						
 					}
                 }else if(args[1].equalsIgnoreCase("fixmodel")) {
                 	sender.sendMessage("Furniture ModelFile fixmodel mode Started");
@@ -74,7 +74,7 @@ public class debugCommand extends iCommand {
                 		console.sendMessage("FurnitureLib: " + sender.getName() + " start the fixmodel mode");
                 		console.sendMessage("Please enter this command to confirm it: '/furniture debug fixmodel " + key + "' you have 60 secounds");
             		}catch (Exception e) {
-						e.printStackTrace();
+						
 					}
                 }else if(args[1].equalsIgnoreCase("lang")) {
                 	new LanguageConverter(getLHandler(), FurnitureLib.getInstance());

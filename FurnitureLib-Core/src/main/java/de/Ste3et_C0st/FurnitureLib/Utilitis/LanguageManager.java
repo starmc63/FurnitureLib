@@ -92,7 +92,7 @@ public class LanguageManager {
             
             config.save(languageFile);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            System.out.println(ex);
             return;
         }
 	}
@@ -138,7 +138,7 @@ public class LanguageManager {
             invStringList.put("playerRemoveInvName", inventory.getString("inv.playerRemoveInvName"));
             invStringList.put("playerSetInvName", inventory.getString("inv.playerSetInvName"));
     	}catch (Exception e) {
-    		e.printStackTrace();
+    		
 		}
     }
 
@@ -182,7 +182,7 @@ public class LanguageManager {
             invStringList.put("playerRemoveInvName", inventory.getString("inv.playerRemoveInvName"));
             invStringList.put("playerSetInvName", inventory.getString("inv.playerSetInvName"));
     	}catch (Exception e) {
-			e.printStackTrace();
+			
 		}
     }
 
@@ -234,7 +234,7 @@ public class LanguageManager {
             conf.save(lang);
             this.loadLanguageConfig();
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
     }
     

@@ -33,7 +33,7 @@ public class EntityID {
 				}
 			}
 		}catch(Exception ex) {
-			ex.printStackTrace();
+			System.out.println(ex);
 		}
 	}
 	
@@ -71,7 +71,7 @@ public class EntityID {
         try {
             clazz = Class.forName(fullName);
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
         return clazz;
     }

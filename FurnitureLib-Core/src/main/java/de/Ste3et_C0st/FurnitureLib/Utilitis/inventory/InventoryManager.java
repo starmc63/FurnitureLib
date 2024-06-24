@@ -6,6 +6,7 @@ import java.util.Objects;
 import de.Ste3et_C0st.FurnitureLib.Utilitis.inventory.manage.ManageInventoryAqua;
 import de.Ste3et_C0st.FurnitureLib.Utilitis.inventory.manage.ManageInventoryCombat;
 import de.Ste3et_C0st.FurnitureLib.main.FurnitureLib;
+import org.bukkit.Bukkit;
 
 public class InventoryManager {
 	
@@ -35,7 +36,7 @@ public class InventoryManager {
 				}
 			}
 		}catch (Exception e) {
-			e.printStackTrace();
+			
 		}
 		return null;
 	}

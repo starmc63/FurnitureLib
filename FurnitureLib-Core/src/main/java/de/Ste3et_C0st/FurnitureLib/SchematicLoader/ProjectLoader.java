@@ -10,6 +10,7 @@ import de.Ste3et_C0st.FurnitureLib.main.ObjectID;
 import de.Ste3et_C0st.FurnitureLib.main.Type.SQLAction;
 import de.Ste3et_C0st.FurnitureLib.main.entity.fContainerEntity;
 import de.Ste3et_C0st.FurnitureLib.main.entity.fEntity;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.HumanEntity;
@@ -41,7 +42,7 @@ public class ProjectLoader extends Furniture {
             }
             this.registerInventory();
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
     }
 
@@ -105,18 +106,27 @@ public class ProjectLoader extends Furniture {
         if (player == null) return;
         if (canBuild(player)) {
         	final Location dropLocation = getLocation().clone().add(0, .5, 0);
-        	
-            if (Objects.nonNull(this.inv)) Stream.of(inv.getInv().getContents()).filter(Objects::nonNull).forEach(entry -> getWorld().dropItemNaturally(dropLocation, entry));
-     
+
+            if (Objects.nonNull(this.inv)) Stream.of(inv.getInv().getContents()).filter(Objects::nonNull).forEach(entry -> {
+                Bukkit.getRegionScheduler().run(FurnitureLib.getInstance(), dropLocation, task -> {
+                    getWorld().dropItemNaturally(dropLocation, entry);
+                });
+            });
+
             getfAsList().stream().filter(entity -> entity.getName().equalsIgnoreCase("#ITEM#") || entity.getName().equalsIgnoreCase("#BLOCK#"))
             		.filter(fContainerEntity.class::isInstance)
             		.map(fContainerEntity.class::cast)
                     .forEach(entity -> {
-                    	Stream.of(entity.getInventory().getContents()).filter(Objects::nonNull).forEach(stack -> getWorld().dropItemNaturally(dropLocation, stack));
+                    	Stream.of(entity.getInventory().getContents()).filter(Objects::nonNull).forEach(stack -> {
+                                    Bukkit.getRegionScheduler().run(FurnitureLib.getInstance(), dropLocation, task -> {
+                                        getWorld().dropItemNaturally(dropLocation, stack);
+                                    });
+                                }
+                                );
                     });
-            
+
             if(Objects.nonNull(this.inv)) this.inv.getViewers().stream().forEach(HumanEntity::closeInventory);
-            
+
             this.destroy(player);
         }
     }

@@ -79,7 +79,7 @@ public class NBTTagDouble extends NBTNumber {
         try {
             this.data = datainput.readDouble();
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
     }
 
@@ -93,7 +93,7 @@ public class NBTTagDouble extends NBTNumber {
         try {
             dataoutput.writeDouble(this.data);
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
     }
 }

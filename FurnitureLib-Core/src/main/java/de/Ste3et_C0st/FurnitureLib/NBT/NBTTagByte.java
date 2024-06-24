@@ -77,7 +77,7 @@ public class NBTTagByte extends NBTNumber {
         try {
             this.data = datainput.readByte();
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
     }
 
@@ -91,7 +91,7 @@ public class NBTTagByte extends NBTNumber {
         try {
             dataoutput.writeByte(this.data);
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
     }
 }

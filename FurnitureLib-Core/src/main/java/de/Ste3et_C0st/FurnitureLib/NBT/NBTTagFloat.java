@@ -77,7 +77,7 @@ public class NBTTagFloat extends NBTNumber {
         try {
             this.data = datainput.readFloat();
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
     }
 
@@ -91,7 +91,7 @@ public class NBTTagFloat extends NBTNumber {
         try {
             dataoutput.writeFloat(this.data);
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
     }
 }

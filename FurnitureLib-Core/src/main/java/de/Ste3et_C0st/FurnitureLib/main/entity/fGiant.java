@@ -4,6 +4,7 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import de.Ste3et_C0st.FurnitureLib.NBT.NBTTagCompound;
 import de.Ste3et_C0st.FurnitureLib.main.ObjectID;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
@@ -39,7 +40,7 @@ public class fGiant extends fContainerEntity{
             try {
                 getManager().sendServerPacket(p, c);
             } catch (Exception e) {
-                e.printStackTrace();
+                
             }
         }
         return this;

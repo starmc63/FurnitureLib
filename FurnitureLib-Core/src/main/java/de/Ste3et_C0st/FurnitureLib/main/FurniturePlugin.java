@@ -1,5 +1,6 @@
 package de.Ste3et_C0st.FurnitureLib.main;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 
@@ -34,7 +35,7 @@ public abstract class FurniturePlugin {
 		try {
 			return new BufferedReader(new InputStreamReader(stream, "UTF-8"));
 		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+			
 			return null;
 		}
 	}
@@ -51,7 +52,7 @@ public abstract class FurniturePlugin {
 			conf.save(file);
 			return conf;
 		}catch (Exception e) {
-			e.printStackTrace();
+			
 		}
 		return null;
 	}

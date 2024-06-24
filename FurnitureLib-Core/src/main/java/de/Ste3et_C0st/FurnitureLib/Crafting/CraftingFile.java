@@ -65,7 +65,7 @@ public class CraftingFile {
                 loadCrafting(name, fileConfiguration);
             }
         } catch (ClassNotFoundException e) {
-        	e.printStackTrace();
+        	
         }
     }
 
@@ -154,7 +154,7 @@ public class CraftingFile {
             loadFunction(configuration);
         } catch (Exception e) {
         	System.err.println(this.header + " is a corrupted model File !");
-            e.printStackTrace();
+            
         }
     }
 
@@ -166,7 +166,7 @@ public class CraftingFile {
                 try {
                     jsonList.add(new JsonParser().parse(str).getAsJsonObject());
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    
                 }
             }
         }
@@ -199,7 +199,7 @@ public class CraftingFile {
 			configuration.save(this.getFilePath());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
 		}
     }
 
@@ -241,7 +241,7 @@ public class CraftingFile {
     			}
     		}catch (Exception e) {
     			FurnitureLib.getInstance().getLogger().warning("Can't load " + header + ".spawnItemStack" + " from format, use spawnMaterial");
-    			e.printStackTrace();
+    			
 			}
     	}
     	
@@ -383,7 +383,7 @@ public class CraftingFile {
     		}
             return configuartion;
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
 		return configuartion;
     }

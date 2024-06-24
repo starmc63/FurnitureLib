@@ -9,6 +9,7 @@ import de.Ste3et_C0st.FurnitureLib.Utilitis.Wrapper.WrapperPlayServerEntityEquip
 import de.Ste3et_C0st.FurnitureLib.main.FurnitureLib;
 import de.Ste3et_C0st.FurnitureLib.main.Type.BodyPart;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
@@ -144,7 +145,7 @@ public class fInventory implements Cloneable {
         try {
             return getSlot(EquipmentSlot.valueOf(s).getSlot());
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
         return null;
     }
@@ -177,7 +178,7 @@ public class fInventory implements Cloneable {
         try {
             setSlot(EquipmentSlot.valueOf(s).getSlot(), item);
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
     }
     

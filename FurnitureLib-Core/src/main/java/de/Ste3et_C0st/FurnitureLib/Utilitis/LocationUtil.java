@@ -45,7 +45,7 @@ public class LocationUtil {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
     }
 

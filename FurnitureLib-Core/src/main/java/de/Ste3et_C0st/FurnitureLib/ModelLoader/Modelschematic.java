@@ -15,6 +15,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -150,7 +152,7 @@ public abstract class Modelschematic{
 						}
 					}
 				}catch (Exception e) {
-					e.printStackTrace();
+					
 				}
 			}
 		});
@@ -226,7 +228,7 @@ public abstract class Modelschematic{
     	try {
 			configuration.save(file);
 		} catch (IOException e) {
-			e.printStackTrace();
+			
 		}
     }
     

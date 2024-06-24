@@ -156,7 +156,7 @@ public class CraftingInv implements Listener {
         try {
             yml.save(file);
         } catch (IOException e1) {
-            e1.printStackTrace();
+            System.out.println(e1);
         }
     }
 

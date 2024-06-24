@@ -11,7 +11,7 @@ public class NBTCompressedStreamTools {
         try {
             datainputstream = new DataInputStream(new BufferedInputStream(new GZIPInputStream(new ByteArrayInputStream(abyte))));
         } catch (Exception e1) {
-            e1.printStackTrace();
+            System.out.println(e1);
         }
 
         NBTTagCompound nbttagcompound;
@@ -22,7 +22,7 @@ public class NBTCompressedStreamTools {
             try {
                 datainputstream.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                
             }
         }
 
@@ -35,7 +35,7 @@ public class NBTCompressedStreamTools {
         try {
             b0 = datainput.readByte();
         } catch (java.io.IOException e1) {
-            e1.printStackTrace();
+            System.out.println(e1);
         }
 
         if (b0 == 0) {
@@ -44,7 +44,7 @@ public class NBTCompressedStreamTools {
             try {
                 datainput.readUTF();
             } catch (java.io.IOException e) {
-                e.printStackTrace();
+                
             }
             nbtbase = NBTBase.createTag(b0);
 
@@ -76,10 +76,10 @@ public class NBTCompressedStreamTools {
                 try {
                     datainputstream.close();
                 } catch (java.io.IOException e) {
-                    e.printStackTrace();
+                    
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                
             }
         }
 
@@ -95,7 +95,7 @@ public class NBTCompressedStreamTools {
             try {
                 dataoutputstream.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                
             }
         }
 
@@ -109,12 +109,12 @@ public class NBTCompressedStreamTools {
                 try {
                     dataoutput.writeUTF("");
                 } catch (java.io.IOException e) {
-                    e.printStackTrace();
+                    
                 }
                 nbttagcompound.write(dataoutput);
             }
         } catch (java.io.IOException e) {
-            e.printStackTrace();
+            
         }
 	}
 
@@ -126,7 +126,7 @@ public class NBTCompressedStreamTools {
             try {
                 dataoutputstream.close();
             } catch (Exception e) {
-                e.printStackTrace();
+                
             }
         }
     }
@@ -135,7 +135,7 @@ public class NBTCompressedStreamTools {
         try {
             return new DataOutputStream(new BufferedOutputStream(new GZIPOutputStream(out)));
         } catch (java.io.IOException e) {
-            e.printStackTrace();
+            
             return null;
         }
     }
@@ -144,7 +144,7 @@ public class NBTCompressedStreamTools {
         try {
             return new DataInputStream(new BufferedInputStream(new GZIPInputStream(in)));
         } catch (java.io.IOException e) {
-            e.printStackTrace();
+            
             return null;
         }
     }

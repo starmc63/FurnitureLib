@@ -110,7 +110,7 @@ public abstract class Furniture extends FurnitureHelper implements Listener {
                                     && !container.getInventory().getItemInMainHand().getType().equals(Material.AIR)) {
                                 ItemStack is = container.getInventory().getItemInMainHand();
                                 is.setAmount(1);
-                                getWorld().dropItem(getLocation(), is);
+                                Bukkit.getRegionScheduler().run(FurnitureLib.getInstance(),getLocation(),task->getWorld().dropItem(getLocation(), is));
                             }
                             if (Objects.nonNull(stack)) {
                             	ItemStack is = stack.clone();

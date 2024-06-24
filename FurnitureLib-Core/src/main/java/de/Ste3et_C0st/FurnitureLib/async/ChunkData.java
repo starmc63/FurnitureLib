@@ -2,6 +2,7 @@ package de.Ste3et_C0st.FurnitureLib.async;
 
 import java.util.concurrent.locks.ReentrantLock;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -38,7 +39,7 @@ public class ChunkData {
                         try {
                             obj.setFinish();
                         } catch (Exception e) {
-                            e.printStackTrace();
+                            
                         }
                         obj.setFinish();
                         obj.sendAll();
@@ -69,7 +70,7 @@ public class ChunkData {
 //		} catch (InvocationTargetException e) {
 //			e.getCause().printStackTrace();
 //		} catch (Exception e) {
-//		    e.printStackTrace();
+//		    
 //		}
 //	}
 

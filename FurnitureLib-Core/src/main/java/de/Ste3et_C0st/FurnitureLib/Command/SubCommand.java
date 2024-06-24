@@ -1,5 +1,6 @@
 package de.Ste3et_C0st.FurnitureLib.Command;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
@@ -59,7 +60,7 @@ public class SubCommand {
         try {
             ctor.newInstance(sender, cmd, arg2, args);
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
     }
 

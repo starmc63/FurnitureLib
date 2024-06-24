@@ -9,6 +9,7 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -81,7 +82,7 @@ public class deleteCommand extends iCommand {
 									try {
 										config.save(file1);
 									} catch (IOException e) {
-										e.printStackTrace();
+										
 									}
 									FurnitureLib.getInstance().getFurnitureManager().getProjects().remove(project);
 									FurnitureLib.getInstance().getFurnitureManager().getProjectMap().remove(project.getName().toLowerCase(), project);
@@ -92,7 +93,7 @@ public class deleteCommand extends iCommand {
 									try {
 										config.save(file2);
 									} catch (IOException e) {
-										e.printStackTrace();
+										
 									}
 									FurnitureLib.getInstance().getFurnitureManager().getProjects().remove(project);
 									FurnitureLib.getInstance().getFurnitureManager().getProjectMap().remove(project.getName().toLowerCase(), project);
@@ -103,7 +104,7 @@ public class deleteCommand extends iCommand {
 									try {
 										config.save(file3);
 									} catch (IOException e) {
-										e.printStackTrace();
+										
 									}
 									FurnitureLib.getInstance().getFurnitureManager().getProjects().remove(project);
 									FurnitureLib.getInstance().getFurnitureManager().getProjectMap().remove(project.getName().toLowerCase(), project);

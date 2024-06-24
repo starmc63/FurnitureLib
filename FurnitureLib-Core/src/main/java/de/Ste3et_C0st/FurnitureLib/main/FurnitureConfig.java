@@ -227,7 +227,7 @@ public class FurnitureConfig {
         		try {
         			type.add(LimitationType.valueOf(str.toUpperCase()));
         		}catch (Exception e) {
-        			e.printStackTrace();
+        			
 				}
         	}
         }else {
@@ -286,7 +286,7 @@ public class FurnitureConfig {
                 }
     		}
     	}catch (Exception e) {
-			e.printStackTrace();
+			
 		}
     	
     }
@@ -324,7 +324,7 @@ public class FurnitureConfig {
         		try {
         			type.add(LimitationType.valueOf(str.toUpperCase()));
         		}catch (Exception e) {
-        			e.printStackTrace();
+        			
 				}
         	}
         }else {

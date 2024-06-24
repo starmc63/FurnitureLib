@@ -43,7 +43,7 @@ public class BlockManager implements Listener {
     				Class<?> clazz = Class.forName("de.Ste3et_C0st.FurnitureLib.Paper.PaperEvents");
     				listener.add((Listener) clazz.newInstance());
     			}catch (Exception e) {
-					e.printStackTrace();
+					
 				}
     		}else {
     			listener.add(new physicsEvent());

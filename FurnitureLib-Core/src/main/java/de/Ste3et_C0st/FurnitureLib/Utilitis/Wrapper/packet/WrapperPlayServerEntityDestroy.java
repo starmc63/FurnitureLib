@@ -64,7 +64,7 @@ public class WrapperPlayServerEntityDestroy extends AbstractPacket{
 		try {
 			super.sendPacket(receiver);
 		}catch(Exception ex) {
-			ex.printStackTrace();
+			System.out.println(ex);
 		}
 	}
 	

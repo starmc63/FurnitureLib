@@ -65,7 +65,7 @@ public class ModelBlockAquaticUpdate extends ModelBlock {
                 FurnitureLib.debug("Furniture Model File: " + yamlConfiguration.getCurrentPath() + " make Problems with:", 10);
                 FurnitureLib.debug("Parsing of: " + str + " -> (" + key + ")", 10);
             } catch (Exception e) {
-                e.printStackTrace();
+                
             }
             this.vector = vector;
             

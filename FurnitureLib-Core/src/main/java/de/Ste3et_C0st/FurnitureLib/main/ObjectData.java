@@ -5,6 +5,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.BlockFace;
@@ -65,7 +66,7 @@ public class ObjectData {
                 this.plugin = l[2];
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
     }
 

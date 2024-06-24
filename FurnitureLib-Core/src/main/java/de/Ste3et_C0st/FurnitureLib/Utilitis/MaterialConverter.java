@@ -41,7 +41,7 @@ public class MaterialConverter {
                         }
                         outStream.close();
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        
                         return false;
                     }
                 }
@@ -60,7 +60,7 @@ public class MaterialConverter {
 
                 return true;
             } catch (Exception e) {
-                e.printStackTrace();
+                
             }
         } else {
             return true;
@@ -139,7 +139,7 @@ public class MaterialConverter {
                 Method m = materialClass.getMethod("getMaterial", int.class);
 				return (Material) m.invoke(null, ID);
             } catch (Exception e) {
-                e.printStackTrace();
+                
             }
         }
         return null;

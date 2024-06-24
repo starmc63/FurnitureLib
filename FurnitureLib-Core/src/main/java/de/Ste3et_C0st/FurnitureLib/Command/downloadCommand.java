@@ -14,6 +14,8 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
 import java.util.Objects;
+
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -52,7 +54,7 @@ public class downloadCommand extends iCommand{
 					sender.sendMessage("§6Download started from: " + name);
 					downLoadData(name, url, sender, null);
 				}catch(Exception e){
-					e.printStackTrace();
+					
 				}
 			}else if(args.length==3){
 				try{
@@ -63,7 +65,7 @@ public class downloadCommand extends iCommand{
 					sender.sendMessage("§6Download started from: " + name);
 					downLoadData(name, url, sender, args[2]);
 				}catch(Exception e){
-					e.printStackTrace();
+					
 				}
 			}else{
 				command.sendHelp((Player) sender);return;
@@ -147,7 +149,7 @@ public class downloadCommand extends iCommand{
 				}catch(Exception e){
 					sender.sendMessage("§cThe FurnitureMaker Downloader has an exception");
 					sender.sendMessage("§cPlease contact the Developer");
-					e.printStackTrace();
+					
 				}
 			}
 		}).start();
@@ -170,7 +172,7 @@ public class downloadCommand extends iCommand{
 				save(compound, project, sender);
 			}
 		}catch(Exception e){
-			e.printStackTrace();
+			
 		}
 	}
 	
@@ -253,7 +255,7 @@ public class downloadCommand extends iCommand{
 				}
 			});
 		}catch(Exception e){
-			e.printStackTrace();
+			
 		}
 	}
 
@@ -292,7 +294,7 @@ public class downloadCommand extends iCommand{
 				CraftItemStack craftItemStack =  new CraftItemStack();
 				file.set(header + ".spawnItemStack", craftItemStack.getItemStack(compound.getCompound("spawnItemStack")));
 			}catch (Exception e) {
-				e.printStackTrace();
+				
 			}
 		}
 		
@@ -455,7 +457,7 @@ public class downloadCommand extends iCommand{
 					String str = Base64.getEncoder().encodeToString(out);
 					file.set(header+".projectData.entities."+ ((String) s), str);
 				} catch (Exception e) {
-					e.printStackTrace();
+					
 				}
 			}
 		}

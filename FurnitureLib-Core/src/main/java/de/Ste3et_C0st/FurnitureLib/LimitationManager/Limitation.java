@@ -110,7 +110,7 @@ public abstract class Limitation {
     	try {
 			configuration.save(file);
 		} catch (IOException e) {
-			e.printStackTrace();
+			
 		}
     }
     

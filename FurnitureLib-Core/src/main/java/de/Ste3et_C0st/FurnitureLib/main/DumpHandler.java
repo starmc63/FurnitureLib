@@ -120,7 +120,7 @@ public class DumpHandler {
 			packetInformations.addProperty("rightLegRotation", projectFields.RightLegRotation);
 			packetInformations.addProperty("field", projectFields.name());
 		}catch (Exception e) {
-			e.printStackTrace();
+			
 		}
 		
 		JsonObject databaseInformations = new JsonObject();
@@ -134,7 +134,7 @@ public class DumpHandler {
 					openConnections.incrementAndGet();
 				}
 			} catch (SQLException e) {
-				e.printStackTrace();
+				
 			}
     	});
     	databaseInformations.addProperty("OpenConnections", openConnections.get());
@@ -234,7 +234,7 @@ public class DumpHandler {
 				}
 			}
 		}catch (Exception e) {
-			e.printStackTrace();
+			
 		}
 	}
 }

@@ -5,6 +5,8 @@ plugins {
     id 'de.Ste3et_C0st.furniture.java-conventions'
 }
 
+
+
 dependencies {
     implementation project(':FurnitureLib-Core')
     implementation project(':FurnitureLib-Paper')

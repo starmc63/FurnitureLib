@@ -18,6 +18,7 @@ import de.Ste3et_C0st.FurnitureLib.main.entity.fEntity;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -300,7 +301,7 @@ public class Project {
         try {
         	obj.setFurnitureObject(furnitureObject.apply(obj));
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
         return this;
     }
@@ -329,7 +330,7 @@ public class Project {
        	try {
        		return clazz.getConstructor(objectID.getClass()).newInstance(objectID);
        	}catch(Exception ex) {
-       		ex.printStackTrace();
+       		System.out.println(ex);
        	}
        	return null;
        };

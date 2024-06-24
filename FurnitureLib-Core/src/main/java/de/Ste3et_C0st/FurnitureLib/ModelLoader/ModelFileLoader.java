@@ -31,7 +31,7 @@ public class ModelFileLoader {
             pro.setEditorProject(true);
             return pro;
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
 		return null;
     }

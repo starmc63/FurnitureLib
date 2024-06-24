@@ -77,7 +77,7 @@ public class NBTTagShort extends NBTNumber {
         try {
             this.data = datainput.readShort();
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
     }
 
@@ -91,7 +91,7 @@ public class NBTTagShort extends NBTNumber {
         try {
             dataoutput.writeShort(this.data);
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
     }
 }

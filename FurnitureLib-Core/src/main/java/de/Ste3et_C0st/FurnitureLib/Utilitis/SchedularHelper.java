@@ -17,7 +17,7 @@ public class SchedularHelper implements SchedularInterface{
 				Class<?> foliaSchedulerClazz = Class.forName("de.Ste3et_C0st.FurnitureLib.Folia.FoliaScheduler");
 				folia = Optional.ofNullable((SchedularInterface) foliaSchedulerClazz.newInstance());
 			}catch (Exception ex) {
-				ex.printStackTrace();
+				System.out.println(ex);
 			}
 		}else {
 			folia = Optional.empty();

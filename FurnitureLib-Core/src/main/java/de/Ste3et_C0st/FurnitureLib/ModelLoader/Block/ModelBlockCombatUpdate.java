@@ -137,7 +137,7 @@ public class ModelBlockCombatUpdate extends ModelBlock {
                 setBlockByte.invoke(block, b, false);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
     }
 

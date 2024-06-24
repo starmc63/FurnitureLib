@@ -22,7 +22,7 @@ public class NBTTagString extends NBTBase {
         try {
             paramDataOutput.writeUTF(this.data);
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
     }
 
@@ -30,7 +30,7 @@ public class NBTTagString extends NBTBase {
         try {
             this.data = paramDataInput.readUTF();
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
         paramNBTReadLimiter.readBytes(16 * this.data.length());
     }

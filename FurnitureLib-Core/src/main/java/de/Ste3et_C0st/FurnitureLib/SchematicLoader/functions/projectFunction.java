@@ -81,7 +81,7 @@ public abstract class projectFunction {
             try {
                 k = EquipmentSlot.valueOf(st.toUpperCase()).getSlot();
             } catch (Exception ex) {
-                ex.printStackTrace();
+                System.out.println(ex);
             }
         }
         return k;

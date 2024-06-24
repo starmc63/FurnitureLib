@@ -11,6 +11,7 @@ import de.Ste3et_C0st.FurnitureLib.main.ObjectID;
 import de.Ste3et_C0st.FurnitureLib.main.Type.EventType;
 import de.Ste3et_C0st.FurnitureLib.main.Type.PublicMode;
 import de.Ste3et_C0st.FurnitureLib.main.Type.SQLAction;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 
@@ -35,7 +36,7 @@ public class DeSerializer {
 			NBTTagCompound compound = NBTCompressedStreamTools.read(bin);
 			return Objects.isNull(compound) ? null : Deserialize(objId, compound, action, world);
 		}catch (Exception e) {
-			e.printStackTrace();
+			
 			return null;
 		}
 	}
@@ -153,7 +154,7 @@ public class DeSerializer {
             try {
                 uuidList.add(UUID.fromString(string));
             } catch (Exception e) {
-            	e.printStackTrace();
+            	
             }
         }
         return uuidList;

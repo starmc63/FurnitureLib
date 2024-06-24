@@ -177,14 +177,14 @@ public class fText_display extends fDisplay {
 				final TextAlignment aligment = TextAlignment.valueOf(metadata.getString("style_flags").toUpperCase());
 				this.setAlignment(aligment);
 			} catch (Exception e) {
-				e.printStackTrace();
+				
 			}
 		}else if(metadata.hasKeyOfType("alignment", 8)) {
 			try {
 				final TextAlignment aligment = TextAlignment.valueOf(metadata.getString("alignment").toUpperCase());
 				this.setAlignment(aligment);
 			} catch (Exception e) {
-				e.printStackTrace();
+				
 			}
 		}
 	}

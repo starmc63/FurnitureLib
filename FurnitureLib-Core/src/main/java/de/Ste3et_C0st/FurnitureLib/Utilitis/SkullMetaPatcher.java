@@ -32,7 +32,7 @@ public class SkullMetaPatcher {
 				final WrappedGameProfile profile = WrappedGameProfile.fromHandle(savedObject);
 				//System.out.println(profile.toString());
 			}catch (Exception e) {
-				e.printStackTrace();
+				
 			}
 		}
 		return stack;
@@ -58,9 +58,9 @@ public class SkullMetaPatcher {
         					    profileField.setAccessible(true);
         					    profileField.set(headMeta, gameProfile.getHandle());
         					} catch (NoSuchFieldException | SecurityException e) {
-        					    e.printStackTrace();
+        					    
         					} catch (IllegalArgumentException | IllegalAccessException e) {
-        					    e.printStackTrace();
+        					    
         					} finally {
         						stack.setItemMeta(headMeta);
         					}

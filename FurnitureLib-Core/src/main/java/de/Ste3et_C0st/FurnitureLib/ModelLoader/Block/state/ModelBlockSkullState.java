@@ -46,7 +46,7 @@ public class ModelBlockSkullState extends ModelBlockState{
 						}
 					}
 				}catch (Exception e) {
-					e.printStackTrace();
+					
 				}
 			}
 		}

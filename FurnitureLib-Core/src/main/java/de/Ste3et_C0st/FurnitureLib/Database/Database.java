@@ -61,7 +61,7 @@ public abstract class Database {
             connectionDebugPool.add(connection);
             return connection;
         } catch (Exception e) {
-            e.printStackTrace();
+            
             return null;
         }
     }
@@ -75,7 +75,7 @@ public abstract class Database {
              stmt.executeUpdate(query);
              return true;
          } catch (Exception e) {
-             e.printStackTrace();
+             
          }
          return false;
     }
@@ -104,7 +104,7 @@ public abstract class Database {
         	stmt.executeUpdate();
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
         return false;
     }
@@ -131,7 +131,7 @@ public abstract class Database {
             		}
         		}
         	}catch (Exception e) {
-                e.printStackTrace();
+                
         	}
         }
         
@@ -209,7 +209,7 @@ public abstract class Database {
                 		}
             		}
         		}catch (Exception e) {
-        			e.printStackTrace();
+        			
     			}
     			
             	return worldData;
@@ -225,7 +225,7 @@ public abstract class Database {
         try (Connection con = getConnection(); Statement stmt = con.createStatement()) {
             stmt.execute(query);
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
     }
 
@@ -239,7 +239,7 @@ public abstract class Database {
             FurnitureLib.debug(getType().name() + " createTable -> " + query, 0);
         } catch (SQLException e) {
             FurnitureLib.debug(getType().name() + " createTable: Fail", 10);
-            e.printStackTrace();
+            
         }
     }
     

@@ -52,7 +52,7 @@ public class LightManager {
             boolean bool = this.lightApi.deleteLight(location);
             FurnitureLib.debug("remove light" + bool, 0);
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
 
     }

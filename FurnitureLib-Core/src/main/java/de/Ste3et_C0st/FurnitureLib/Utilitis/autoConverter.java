@@ -102,7 +102,7 @@ public class autoConverter {
                                 byte[] out = NBTCompressedStreamTools.toByte(metadata);
                                 newConfig.set(header + ".projectData.entities." + letter, Base64.getEncoder().encodeToString(out));
                             } catch (Exception e) {
-                                e.printStackTrace();
+                                
                             }
                         });
                     }
@@ -128,7 +128,7 @@ public class autoConverter {
                     }
                     newConfig.save(new File("plugins/" + FurnitureLib.getInstance().getName() + "/models/" + f.getName().replace(".yml", ".dModel")));
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    
                 }
             }
             sender.sendMessage("convert finish");

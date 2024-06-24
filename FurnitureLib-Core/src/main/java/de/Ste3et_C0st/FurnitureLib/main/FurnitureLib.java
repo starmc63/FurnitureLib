@@ -17,6 +17,7 @@ import de.Ste3et_C0st.FurnitureLib.Listener.player.onFurnitureLibDisabled;
 import de.Ste3et_C0st.FurnitureLib.Listener.player.onPlayerDeath;
 import de.Ste3et_C0st.FurnitureLib.Listener.player.onPlayerJoin;
 import de.Ste3et_C0st.FurnitureLib.Listener.player.onPlayerQuit;
+import de.Ste3et_C0st.FurnitureLib.SchematicLoader.Events.ProjectBreakEvent;
 import de.Ste3et_C0st.FurnitureLib.SchematicLoader.ProjectManager;
 import de.Ste3et_C0st.FurnitureLib.Utilitis.*;
 import de.Ste3et_C0st.FurnitureLib.Utilitis.cache.DiceOfflinePlayer;
@@ -33,6 +34,7 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -367,7 +369,6 @@ public class FurnitureLib extends JavaPlugin {
 		c.setExecutor(new command(this));
 		c.setTabCompleter(new TabCompleterHandler());
     }
-    
     private void loadServerFunctions() {
     	try {
     		if(isPaper()) {
@@ -376,7 +377,7 @@ public class FurnitureLib extends JavaPlugin {
         		this.serverFunction = (ServerFunction) Class.forName("de.Ste3et_C0st.FurnitureLib.Folia.FoliaFunctions").newInstance();
         	}
     	}catch (Exception excpetion) {
-    		excpetion.printStackTrace();
+            System.out.println(excpetion);
     	}
     	if(this.serverFunction == null) this.serverFunction = new SpigotFunctions();
     	this.serverFunction.onEnable();
@@ -443,7 +444,7 @@ public class FurnitureLib extends JavaPlugin {
                 });
             }
     	}catch (Exception e) {
-			e.printStackTrace();
+			
 		}
     }
 
@@ -456,7 +457,7 @@ public class FurnitureLib extends JavaPlugin {
             configuration.set("ignoreList", ignoreList);
             configuration.save(ignoredFile);
         }catch (Exception e) {
-			e.printStackTrace();
+			
 		}
     }
 
